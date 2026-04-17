@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>CS 1102 Group Project</title>
+        <style>
+  nav {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+  }
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  nav a:hover {
+    color: #ff6600;
+  }
+  .correction
+   { font-weight: bold;
+    color:red; 
+  }
+  .bold {font-weight:bold;}
+  .case-content {
+    display: none;
+  }
+  .case-content.active {
+    display: block !important;
+  }
+  .line {
+  border-bottom: 1px solid black;
+  margin: 20px 0;
+}
+  #facts1 {
+    display: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  #factButton1 {
+    background-color: white;
+    color: red;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  #factButton1:hover {
+    background-color: grey;
+  }
+  #facts2 {
+    display: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  #factButton2 {
+    background-color: white;
+    color: red;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  #factButton2:hover {
+    background-color: grey;
+  }
+</style>
 
+<script>
+      function jumpToCase(caseId) {
+        const allCases = document.querySelectorAll('.case-content');
+        allCases.forEach(caseEl => {
+          caseEl.classList.remove('active');
+        });
+        
+        if (caseId) {
+          const selectedCase = document.getElementById(caseId);
+          if (selectedCase) {
+            selectedCase.classList.add('active');
+            console.log('Case ' + caseId + ' is now visible');
+          }
+        }
+      }
+
+      function ShowFact1(){
+        const factsDiv = document.getElementById("facts1");
+        if (factsDiv.style.display === "none" || factsDiv.style.display === "") {
+          factsDiv.style.display = "block";
+        } 
+        else {factsDiv.style.display = "none";}
+      }
+
+      function ShowFact2(){
+        const factsDiv = document.getElementById("facts2");
+        if (factsDiv.style.display === "none" || factsDiv.style.display === "") {
+          factsDiv.style.display = "block";
+        } 
+        else {factsDiv.style.display = "none";}
+      }
+
+      window.addEventListener('load', function() {
+        document.getElementById('case1').classList.add('active');
+      });
+</script>
+    </head>
+
+    <body>
+        <h1>CS1102 - Course Project - 2025 / 2026 Semester B</h1>
+        <h2>Project Topic: LLM for Legal Applications: Case Retrieval, Summarization, and Drafting Support</h2>
+        <h3>Sin Cheuk Yiu -58534786</h3>
+        <h3>Kwok Yan - 58541292</h3>
+        <h3>Seah Yan Zhu - 60031361</h3>
+
+        <nav>
+      <a href="index.html">Home</a>
+      <a href="background.html">Background</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="experience.html">Experience</a>
+      <a href="discovery.html">Discovery</a>
+      <a href="challenges.html">Challenges</a>
+      <a href="quiz.html">Quiz</a>
+        </nav>
+
+<h1>Our discovery</h1>
+<h2>LLM hallucination</h2>
+<p>We have designed some law-related questions to ask LLM to provide its full answer with citations. In this experiment, we use Copilot, a multi-LLM orchestration platform, to assess the accuracy of the citations in its responses. Examine whether the LLM provides accurate references or differs from the ordinances, legislation, and laws on the HKLII website.</p>
+
+<label for="case-selector" style="font-weight: bold;margin:0 15px">Jump to Case:</label>
+<select id="case-selector" onchange="jumpToCase(this.value)" style="padding: 5px; margin: 10px 0;">
+  <option value="case1">Case 1</option>
+  <option value="case2">Case 2</option>
+</select>
+
+<div id="case1" class="case-content">
+<h3>Case 1</h3>
+<h4>Prompt:</h4>
+<p>A staff member who has served a company for 6 years resigned due to ill health (certified by a registered medical practitioner). Their monthly salary is HK$30,000. Does this employee qualify for Long Service Payment? If so, calculate the amount and explain how the MPF employer's contribution might offset this payment, citing all the relevant sections of Cap. 57.</p>
+<h4>Copilot's response:</h4>
+<p>Yes, the employee qualifies for Long Service Payment (LSP). The amount is HK$180,000, but the employer’s Mandatory Provident Fund (MPF) contributions may offset this payment only for employment terminated before 1 May 2025. After that date, mandatory MPF contributions can no longer be used to offset LSP.</p>
+<p><span class = "bold">Eligibility:</span> Employee qualifies for LSP under Cap. 57, s.31I (6 years’ service, resignation due to ill health).</p> 
+<p><span class = "bold">Amount:</span> HK$120,000 (calculated under s.31J).</p>
+<p><span class = "bold">Offset:</span> Employer may offset with mandatory MPF contributions only if termination occurred before 1 May 2025 (s.31L). After that date, offsetting is abolished.</p>
+<p><span class = "bold">Final note:</span> The abolition of offsetting strengthens employee protection, ensuring full LSP entitlement in future cases.</p>
+<div class="line"></div>
+<p>The logic of the response by Copilot is basically true. However, the sections cited in their response are not true.</p>
+<br>
+<button id="factButton1" onclick="ShowFact1()">Show Facts</button>
+<div id="facts1">
+<p><span class = "bold">Eligibility:</span>Employee qualifies for LSP under Cap. 57, <s style="color:red">s.31I</s> <span class="correction">s.31R</span> (6 years’ service, resignation due to ill health).</p> 
+<p><span class = "bold">Amount:</span>HK$120,000 (calculated under <s style="color:red">s.31J</s> <span class="correction">s.31V</span>).</p>
+<p><span class = "bold">Offset:</span>Employer may offset with mandatory MPF contributions only if termination occurred before 1 May 2025 <s style="color:red">(s.31L)</s>. After that date, offsetting is abolished.</p>
+<p><span class = "bold">Final note:</span>The abolition of offsetting strengthens employee protection, ensuring full LSP entitlement in future cases.</p>
+<br>
+<p class="correction">Section 31L is wrongly cited, please refer to this website:<a href="https://www.labour.gov.hk/tc/public/pdf/wcp/ConciseGuide/Appendix2.pdf" target="_blank">https://www.labour.gov.hk/tc/public/pdf/wcp/ConciseGuide/Appendix2.pdf</a></p>
+<div class="line"></div>
+<p>As we can observe from this attempt, the logic provided by Copilot is generally true, but the section cited is teribbly wrong.</p>
+</div>
+</div>
+
+<div id="case2" class="case-content">
+<h3>Case 2</h3>
+<h4>Prompt:</h4>
+<p>An employee is entitled to 14 days of untaken annual leave upon termination. In the past 12 months, their total earnings were HK$360,000, excluding any rest days or statutory holidays that were unpaid. Please summarize your answer in a paragraph on how to calculate the Annual Leave Pay using the '12-month average' rule and cite the specific legal provisions in the Employment Ordinance regarding the calculation of daily average wages.</p>
+<h4>Copilot's response:</h4>
+<p>Annual leave pay in Hong Kong is calculated using the “12‑month average” rule, which requires dividing the employee’s total wages earned in the preceding 12 months by the number of days on which wages were actually payable, excluding unpaid rest days, statutory holidays, or other non‑payable periods. This produces the average daily wage, which is then multiplied by the number of untaken annual leave days to determine the entitlement. In your case, HK$360,000 is divided by the relevant wage‑payable days to arrive at the daily average, and that figure is multiplied by 14 to produce the annual leave pay due. The Employment Ordinance (Cap. 57), specifically Sections 41AA, 41C, and 41E, sets out the definition of average daily wages, requires annual leave pay to be based on this method, and clarifies the exclusions to ensure the entitlement reflects the employee’s actual earning pattern.</p>
+<div class="line"></div>
+<p>In this attempt, while the answer provided is mainly correct, but there is still a minor issue.</p>
+<button id="factButton2" onclick="ShowFact2()">Show Facts</button>
+<div id="facts2">
+<h4>Facts:</h4>
+<p>...The Employment Ordinance (Cap. 57), specifically Sections <s style="color:red">41AA</s> <span class="correction">41AB</span>, 41C, and 41E, sets out the definition of average daily wages...</p>
+<div class="line"></div>
+<p>The issue occured in this case has significantly reduced. We can see that while the logic and calculations given by LLM were mostly accurate, there is still a major concern about the citations stated by LLM. LLM might directly use those sections that have a close meaning to cite from prior learning. This is a serious mistake when drafting a statement; hence, there is still some room to improve LLM before utilizing it in legal frameworks.</p>
+</div>
+</div>
+
+<footer>
+    <p style="text-align: center;">© 2026 [CS1102]. All rights reserved.</p>
+</footer>
+    </body>
+</html>
