@@ -82,7 +82,6 @@
     </section>
         <h2>A Practical Guide to Building Legal LLM Tools</h2>
 
-    <section id="data-preparation">
     <h3>Step 1: Data Preparation</h3>
         <p>
             Before the AI can help you, you must provide it with high-quality information.
@@ -103,13 +102,16 @@
         </ul>
 
 
+    <section id="RAG">
         <h3>Step 3: Use RAG for "Open-Book" Reasoning</h3>
         <p>To stop "hallucinations" (making up fake case law), you must use <strong>Retrieval-Augmented Generation (RAG)</strong>.</p>
         <ul>
             <li><strong>How RAG Works:</strong> Think of it as an "open-book exam." RAG forces the AI to look at <em>your</em> specific documents first to find the answer.</li>
             <li><strong>Setting Boundaries (Grounding):</strong> Give the AI a strict rule: "If the answer is not in the provided documents, say 'I do not know.' Do not make anything up."</li>
         </ul>
-  
+
+        
+    <section id="master-legal-prompt-engineering">
         <h3>Step 4: Master Legal Prompt Engineering</h3>
         <p>A professional legal prompt should always have these four parts:</p>
         <ol>
@@ -119,6 +121,7 @@
             <li><strong>Citations:</strong> "Tell me exactly which page and paragraph you found it on."</li>
         </ol>
 
+            <section id="testing-and-human-oversight">
         <h3>Step 5: Testing and Human Oversight</h3>
         <p>Never trust an AI blindly. It is a co-pilot, not the captain.</p>
         <ul>
