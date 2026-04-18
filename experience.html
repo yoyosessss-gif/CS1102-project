@@ -103,22 +103,22 @@
 
 
     <section id="RAG">
-        <h3>Step 3: Use RAG for "Open-Book" Reasoning</h3>
-        <p>To stop "hallucinations" (making up fake case law), you must use <strong>Retrieval-Augmented Generation (RAG)</strong>.</p>
+        <h3>Step 3: Use Open Book Reasoning or RAG</h3>
+        <p>Standard AI often makes up fake laws. To prevent this, you must use Retrieval Augmented Generation</p>
         <ul>
-            <li><strong>How RAG Works:</strong> Think of it as an "open-book exam." RAG forces the AI to look at <em>your</em> specific documents first to find the answer.</li>
-            <li><strong>Setting Boundaries (Grounding):</strong> Give the AI a strict rule: "If the answer is not in the provided documents, say 'I do not know.' Do not make anything up."</li>
+            <li><strong>How RAG Works:</strong> Instead of guessing from memory, the AI must look for the answer inside your uploaded documents first.</li>
+            <li><strong>Set Strict Rules:</strong> Restrict the AI to say it does not know the answer if the information is not in its files. This prevents the AI from making things up.</li>
         </ul>
 
         
     <section id="master-legal-prompt-engineering">
         <h3>Step 4: Master Legal Prompt Engineering</h3>
-        <p>A professional legal prompt should always have these four parts:</p>
+        <p>he quality of the answer from the AI depends on your instructions and prompt. A professional prompt should include 4 things.</p>
         <ol>
-            <li><strong>Role:</strong> "You are a senior IP lawyer with 20 years of experience."</li>
-            <li><strong>Task:</strong> "Review this NDA and list any clauses that are unfair to our client."</li>
-            <li><strong>Format:</strong> "Put the results in a bulleted list with a summary paragraph at the end."</li>
-            <li><strong>Citations:</strong> "Tell me exactly which page and paragraph you found it on."</li>
+            <li><strong>Role:</strong> Tell the AI to act as a senior lawyer or a specialist. EG. "You are a senior IP lawyer with 20 years of experience."</li>
+            <li><strong>Task:</strong> Give a specific job, such as checking a contract for any missing rules about ending the agreement. EG. "Review this document and list any clauses that are unfair to our client."</li>
+            <li><strong>Format:</strong> Tell the AI how to show and display the work. EG. "Put the results in a bulleted list with a summary paragraph at the end."</li>
+            <li><strong>Citations:</strong> Ask the AI to list the exact page number and paragraph for every claim it makes."Tell me exactly which page and paragraph you found it on."</li>
         </ol>
 
             <section id="testing-and-human-oversight">
