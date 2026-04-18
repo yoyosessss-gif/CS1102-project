@@ -129,19 +129,16 @@ function checkAnswers() {
     let score = 0;
     let totalQuestions = 2;
 
-    // 檢查第一題
     let q1 = document.querySelector('input[name="q1"]:checked');
     if (q1 && q1.value === "correct") {
         score++;
     }
 
-    // 檢查第二題
     let q2 = document.querySelector('input[name="q2"]:checked');
     if (q2 && q2.value === "correct") {
         score++;
     }
 
-    // 顯示結果
     let result = document.getElementById("quiz-result");
     if (!q1 || !q2) {
         result.innerHTML = "Please answer all questions before submitting!";
