@@ -1,86 +1,96 @@
-
-       <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-         <meta charset="UTF-8">
-        <title>CS 1102 Group Project</title>
-<style>
- 
+<head>
+    <meta charset="UTF-8">
+    <title>CS 1102 Group Project</title>
+    <style>
+        /* 基本設定 */
+        body {
+            background-color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0 0 50px 0;
+            color: #333;
+        }
+
+        /* 導覽列容器 */
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 10px 40px;
+        }
+
         nav {
             background-color: #333;
+            flex: 1;
             padding: 15px;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            width: 100%;
-            box-sizing: border-box;
-            display:block;
         }
+
         nav a {
             margin: 0 20px;
             text-decoration: none;
             color: white;
             font-weight: bold;
         }
+
         nav a:hover {
             color: #ff6600;
         }
+
         .container {
-        max-width: 1000px; 
-        margin: 0 auto;  
-        padding: 0 40px;  
-        }
- 
-        body {
-            background-color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            max-width: 1500px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px 50px 20px;
-            color: #333;
+            padding: 0 40px;
         }
 
+        /* 區塊樣式：只給 section 底部加線 */
         section {
-            padding: 20px 0 10px 0;
+            padding: 40px 0;
             border-bottom: 1px solid #eee;
         }
+
+        /* 最後一個區塊（References）不要底線 */
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h1 { color: #2c3e50; text-align: center; margin-top: 30px; }
+        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; margin-top: 40px; }
+        h3 { color: #2c3e50; margin-top: 25px; }
+        
         ul { list-style-type: square; }
         li { margin-bottom: 12px; }
         strong { color: #2c3e50; }
-        h1 { color: #2c3e50; text-align: center; margin-top: 10px; }
-        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; }
 
-    .correction
-   { font-weight: bold;
-    color:red; 
-  }
-  .bold {font-weight:bold;}
-  .case-content {
-    display: none;
-  }
-  .case-content.active {
-    display: block ;
-  }
-  .line {
-  border-bottom: 1px solid black;
-  margin: 20px 0;
+        footer {
+            border-top: 1px solid #eee;
+            margin-top: 50px;
+            padding: 20px 0;
+        }
     </style>
 </head>
 <body>
 
-   <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 30px; padding: 10px 40px;">
+<div class="header-container">
     <a href="https://www.cityu.edu.hk/"><img src="Cityu_logo.jpeg" alt="CityU Logo" style="width: 100px; height: auto;"></a>
-    <nav style="background-color: #333; flex: 1; padding: 15px; margin: 0;">
+    <nav>
         <a href="index.html">Home</a>
-        <a href="how-it-works.html">How It Works</a>
+        <a href="#how-to-build-it">How It Works</a>
         <a href="experience.html">Experience</a>
         <a href="discovery.html">Discovery</a>
         <a href="challenges.html">Challenges</a>
         <a href="quiz.html">Quiz</a>
     </nav>
 </div>
+
 <div class="container">
     <section id="home">
         <h1>CS1102 - Course Project - 2025 / 2026 Semester B</h1>
@@ -93,82 +103,66 @@
                 <li>Kwok Yan - 58541292</li>
                 <li>Seah Yan Zhu - 60031361</li>
             </ul>
-            </div>
+        </div>
     </section>
 
+    <section id="guide">
         <h2>A Practical Guide to Building Legal LLM Tools</h2>
 
-    <h3>Step 1: Data Preparation</h3>
-        <p>
-            Before the AI can help you, you must provide it with high-quality information.
-        </p>
+        <h3>Step 1: Data Preparation</h3>
+        <p>Before the AI can help you, you must provide it with high-quality information.</p>
+        <ul>
+            <li><strong>Remove Sensitive Information:</strong> Before you upload documents, remove names or secret client details to protect from leaks.</li>
+            <li><strong>Build a Clean Library:</strong> Put best templates and court rules into one secure digital folder.</li>
+            <li><strong>Make Files Searchable:</strong> Use OCR software to turn scanned PDFs into searchable text.</li>
+        </ul>
 
-       <ul>
-            <p><strong>Remove Sensitive Information:</strong> Before you upload any documents, you must remove names, phone numbers, or secret client details. This protects the firm if there is a data leak.</p>
-          <p>  <strong>Build a Clean Library:</strong> Put the best templates, past opinions, and court rules of the firm into one secure digital folder. </p>
-           <p> <strong>Make Files Searchable:</strong> Use OCR software to turn scanned PDFs into searchable text, AI cannot read a document if it is just image.</p>
-       </ul> 
-
-<section id="how-to-build-it">
         <h3>Step 2: Choose How to Build It</h3>
-        <p>There is two ways of coding for users to choose</p>
+        <p>There are two ways of coding for users to choose:</p>
         <ul>
-            <p><strong>The No Code method:</strong> Use platforms like Microsoft Copilot Studio. You can build AI agents by clicking buttons and typing instructions in English.</p>
-            <p><strong>The Low Code method:</strong> Use frameworks like Python. This method is more complex but it allows the AI to plan and finish many steps at once, such as reading many contracts at once and writing a summary for each.</p>
+            <li><strong>The No Code method:</strong> Use platforms like Microsoft Copilot Studio. Build agents by clicking buttons.</li>
+            <li><strong>The Low Code method:</strong> Use Python. Allows the AI to plan multi-step tasks like reading 50 contracts at once.</li>
         </ul>
 
-
-    <section id="RAG">
-        <h3>Step 3: Use Open Book Reasoning or RAG</h3>
-        <p>Standard AI often makes up fake laws. To prevent this, you must use Retrieval Augmented Generation</p>
+        <h3>Step 3: Use Open Book Reasoning (RAG)</h3>
+        <p>Standard AI often makes up fake laws. Use Retrieval Augmented Generation to prevent this.</p>
         <ul>
-            <p><strong>How RAG Works:</strong> Instead of guessing from memory, the AI must look for the answer inside your uploaded documents first.</p>
-            <p><strong>Set Strict Rules:</strong> Restrict the AI to say it does not know the answer if the information is not in its files. This prevents the AI from making things up.</p>
+            <li><strong>How RAG Works:</strong> AI must look for answers inside your documents first instead of guessing.</li>
+            <li><strong>Set Strict Rules:</strong> Restrict the AI to say it does not know if info is missing.</li>
         </ul>
 
-        
-    <section id="master-legal-prompt-engineering">
         <h3>Step 4: Master Legal Prompt Engineering</h3>
-        <p>he quality of the answer from the AI depends on your instructions and prompt. A professional prompt should include 4 things.</p>
+        <p>The quality of the answer depends on your instructions. A professional prompt needs:</p>
         <ol>
-            <li><strong>Role:</strong> Tell the AI to act as a senior lawyer or a specialist. </li>
-               <p> EG. "You are a senior IP lawyer with 20 years of experience."</p>
-            <li><strong>Task:</strong> Give a specific job, such as checking a contract for any missing rules about ending the agreement.</li>
-                <p>EG. "Review this document and list any clauses that are unfair to our client."</p>
-            <li><strong>Format:</strong> Tell the AI how to show and display the work. </li>
-               <p> EG. "Put the results in a bulleted list with a summary paragraph at the end."</p>
-            <li><strong>Citations:</strong> Ask the AI to list the exact page number and paragraph for every claim it makes.</li>
-           <p> EG. "Tell me exactly which page and paragraph you found it on."</p>
+            <li><strong>Role:</strong> e.g., "You are a senior IP lawyer with 20 years of experience."</li>
+            <li><strong>Task:</strong> e.g., "Review this document and list unfair clauses."</li>
+            <li><strong>Format:</strong> e.g., "Put results in a bulleted list."</li>
+            <li><strong>Citations:</strong> Ask for exact page numbers and paragraphs.</li>
         </ol>
 
-            <section id="testing-and-human-oversight">
         <h3>Step 5: Testing and Human Oversight</h3>
-        <p>AI should act as an assisting tool, however the lawyer should double check the info.</p>
+        <p>AI is an assistant; the lawyer must double-check the info.</p>
         <ul>
-            <p><strong>Human Verification:</strong> AI is only a helper for the office. A qualified lawyer must review output that the AI creates before it is finalized.</p>
-            <p><strong>The Accuracy Test:</strong> Create test questions where you know the answer. If the AI fails to answer the question, you should fix your instructions or data.</p>
+            <li><strong>Human Verification:</strong> A qualified lawyer must review every output before it is finalized.</li>
+            <li><strong>The Accuracy Test:</strong> Create test questions where you know the answer to check the AI.</li>
         </ul>
+    </section>
 
-</section>
+    <section id="references">
+        <h2 style="border-left: none; padding-left: 0; color: #7f8c8d; font-size: 20px;">References</h2>
+        <ol style="font-size: 0.9em; color: #555;">
+            <li>Banks, I. (2026). Judges-in-the-loop? Judicial involvement in human oversight of high-risk decision support systems under the EU AI Act. <em>International Journal of Law and Information Technology</em>, 34, Article eaag001. <a href="https://doi.org/10.1093/ijlit/eaag001" target="_blank">https://doi.org/10.1093/ijlit/eaag001</a></li>
+            <li>Gupta, S., Agrawal, V., Negi, Y., Karunanithi, S., & Balakrishnan, A. (2026). Reducing hallucinations in legal AI: A retrieval augmented generation based model for accurate legal guidance. <em>IEEE Access</em>, PP(1), 1. <a href="https://doi.org/10.1109/ACCESS.2026.3675624" target="_blank">https://doi.org/10.1109/ACCESS.2026.3675624</a></li>
+            <li>Kapula, K. (2025). Intelligent document processing: The new frontier of automation. <em>World Journal of Advanced Engineering Technology and Sciences</em>, 17(1), 376–387. <a href="https://doi.org/10.30574/wjaets.2025.17.1.1360" target="_blank">https://doi.org/10.30574/wjaets.2025.17.1.1360</a></li>
+            <li>Singapore Academy of Law. (2025). <em>Prompt engineering guide for the legal profession</em> (2nd ed.). <a href="https://sal.org.sg/wp-content/uploads/2025/10/Prompt-Engineering-Guide-2025-2nd-Edition.pdf" target="_blank">Link to Guide</a></li>
+        </ol>
+    </section>
 
-
-<section id="references">
-    <h2 style="font-size: 20px; color: #7f8c8d;">References</h2>
-
-    <ol>
-        <li>Banks, I. (2026). Judges-in-the-loop? Judicial involvement in human oversight of high-risk decision support systems under the EU AI Act. <em>International Journal of Law and Information Technology</em>, 34, Article eaag001. <a href="https://doi.org/10.1093/ijlit/eaag001" target="_blank">https://doi.org/10.1093/ijlit/eaag001</a></li>
-        
-        <li>Gupta, S., Agrawal, V., Negi, Y., Karunanithi, S., & Balakrishnan, A. (2026). Reducing hallucinations in legal AI: A retrieval augmented generation based model for accurate legal guidance. <em>IEEE Access</em>, PP(1), 1. <a href="https://doi.org/10.1109/ACCESS.2026.3675624" target="_blank">https://doi.org/10.1109/ACCESS.2026.3675624</a></li>
-        
-        <li>Kapula, K. (2025). Intelligent document processing: The new frontier of automation. <em>World Journal of Advanced Engineering Technology and Sciences</em>, 17(1), 376–387. <a href="https://doi.org/10.30574/wjaets.2025.17.1.1360" target="_blank">https://doi.org/10.30574/wjaets.2025.17.1.1360</a></li>
-        
-        <li>Singapore Academy of Law. (2025). <em>Prompt engineering guide for the legal profession</em> (2nd ed.). <a href="https://sal.org.sg/wp-content/uploads/2025/10/Prompt-Engineering-Guide-2025-2nd-Edition.pdf" target="_blank">Link to Guide</a></li>
-    </ol>
-</section>
+    <footer>
+        <p style="text-align:center;">© 2026 [CS1102]. All rights reserved.</p>
+    </footer>
+</div>
 
 </body>
 </html>
 
-<footer>
- <p style="text-align:center;">© 2026 [CS1102]. All rights reserved.</p>
-</footer>
