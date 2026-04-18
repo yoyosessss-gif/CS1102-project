@@ -144,20 +144,27 @@
   <script>
 function checkAnswers() {
     let score = 0;
-    let totalQuestions = 2;
+    let totalQuestions = 0;
+    let allAnswered = true;
 
-    let q1 = document.querySelector('input[name="q1"]:checked');
-    if (q1 && q1.value === "correct") {
-        score++;
-    }
+    const questionNames = new Set();
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        questionNames.add(radio.name);
+    });
 
-    let q2 = document.querySelector('input[name="q2"]:checked');
-    if (q2 && q2.value === "correct") {
-        score++;
-    }
+    questionNames.forEach(questionName => {
+        totalQuestions++;
+        const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+        
+        if (!selectedAnswer) {
+            allAnswered = false;
+        } else if (selectedAnswer.value === "correct") {
+            score++;
+        }
+    });
 
     let result = document.getElementById("quiz-result");
-    if (!q1 || !q2) {
+    if (!allAnswered) {
         result.innerHTML = "Please answer all questions before submitting!";
     } else {
         result.innerHTML = "You scored " + score + " out of " + totalQuestions + "!";
