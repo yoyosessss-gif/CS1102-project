@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+       <!DOCTYPE html>
 <html lang="en">
     <head>
          <meta charset="UTF-8">
@@ -26,46 +27,60 @@
             color: #ff6600;
         }
         .container {
-    max-width: 1000px; 
-    margin: 0 auto;  
-    padding: 0 40px;  
-}
-
-
+        max-width: 1000px; 
+        margin: 0 auto;  
+        padding: 0 40px;  
+        }
+ 
         body {
+            background-color: white;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             max-width: 1500px;
-            margin: 0;
+            margin: 0 auto;
             padding: 0 20px 50px 20px;
             color: #333;
-            width: 100%;
         }
 
         section {
             padding: 60px 0 20px 0;
             border-bottom: 1px solid #eee;
         }
-        h1 { color: #2c3e50; text-align: center; margin-top: 10px; }
-        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; }
         ul { list-style-type: square; }
         li { margin-bottom: 12px; }
         strong { color: #2c3e50; }
+        h1 { color: #2c3e50; text-align: center; margin-top: 10px; }
+        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; }
+
+    .correction
+   { font-weight: bold;
+    color:red; 
+  }
+  .bold {font-weight:bold;}
+  .case-content {
+    display: none;
+  }
+  .case-content.active {
+    display: block ;
+  }
+  .line {
+  border-bottom: 1px solid black;
+  margin: 20px 0;
     </style>
 </head>
 <body>
 
-   <div style="display: flex; align-items: center; gap: 30px; padding: 10px 20px; background-color: white;">
-            <a href="https://www.cityu.edu.hk/"><img src="Cityu_logo.jpeg" alt="CityU Logo" style="width: 100px; height: auto;"></a>
-            <nav style="flex: 1; margin: 0;">
-                <a href="index.html">Home</a>
-                <a href="how-it-works.html">How It Works</a>
-                <a href="experience.html">Experience</a>
-                <a href="discovery.html">Discovery</a>
-                <a href="challenges.html">Challenges</a>
-                <a href="quiz.html">Quiz</a>
-            </nav>
-        </div>
+   <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 30px; padding: 10px 40px;">
+    <a href="https://www.cityu.edu.hk/"><img src="Cityu_logo.jpeg" alt="CityU Logo" style="width: 100px; height: auto;"></a>
+    <nav style="background-color: #333; flex: 1; padding: 15px; margin: 0;">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="experience.html">Experience</a>
+        <a href="discovery.html">Discovery</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+</div>
 <div class="container">
     <section id="home">
         <h1>CS1102 - Course Project - 2025 / 2026 Semester B</h1>
@@ -80,6 +95,7 @@
             </ul>
             </div>
     </section>
+
         <h2>A Practical Guide to Building Legal LLM Tools</h2>
 
     <h3>Step 1: Data Preparation</h3>
