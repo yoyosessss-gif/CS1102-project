@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><title>CS 1102 Group Project</title>
+    <head>
+         <meta charset="UTF-8">
+        <title>CS 1102 Group Project</title>
 <style>
-  nav {
-    background-color: whitesmoke;
-    padding: 10px;
-    text-align: center;
-  }
-  nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-  }
-  nav a:hover {
-    color: orangered;
-  }
-  .correction
+ 
+  <style>
+        nav {
+            background-color: #333;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+            display:block;
+        }
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ff6600;
+        }
+        .container {
+        max-width: 1000px; 
+        margin: 0 auto;  
+        padding: 0 40px;  
+        }
+ 
+        body {
+            background-color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 20px 50px 20px;
+            color: #333;
+        }
+
+        section {
+            padding: 60px 0 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        h1 { color: #2c3e50; text-align: center; margin-top: 10px; }
+        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; }
+
+    .correction
    { font-weight: bold;
     color:red; 
   }
@@ -110,12 +143,15 @@
     </head>
 
     <body>
-        <h1>CS1102 - Course Project - 2025 / 2026 Semester B</h1>
+        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+            <a href="https://www.cityu.edu.hk/"><img src="Cityu_logo.jpeg" alt="CityU logo" width="80px"></a>
+            <h1 style="margin: 0; text-align: center;">CS1102 - Course Project - 2025 / 2026 Semester B</h1>
+        </div>
         <h2>Project Topic: LLM for Legal Applications: Case Retrieval, Summarization, and Drafting Support</h2>
         <h3>Sin Cheuk Yiu -58534786</h3>
         <h3>Kwok Yan - 58541292</h3>
         <h3>Seah Yan Zhu - 60031361</h3>
-
+        <div class="line"></div>
         <nav>
       <a href="index.html">Home</a>
       <a href="background.html">Background</a>
@@ -125,7 +161,8 @@
       <a href="challenges.html">Challenges</a>
       <a href="quiz.html">Quiz</a>
         </nav>
-
+    <div class="line"></div>    
+<br>
 <h1>Our discovery</h1>
 <h2>LLM hallucination</h2>
 <p>We have designed some law-related questions to ask LLM to provide its full answer with citations. In this experiment, we use Copilot, a multi-LLM orchestration platform, to assess the accuracy of the citations in its responses. Examine whether the LLM provides accurate references or differs from the ordinances, legislation, and laws on the HKLII website.</p>
