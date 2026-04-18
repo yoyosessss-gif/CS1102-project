@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>CS 1102 Group Project</title>
-    <style>
+    <head>
+         <meta charset="UTF-8">
+        <title>CS 1102 Group Project</title>
+<style>
+ 
         nav {
             background-color: #333;
             padding: 15px;
@@ -13,6 +14,7 @@
             z-index: 1000;
             width: 100%;
             box-sizing: border-box;
+            display:block;
         }
         nav a {
             margin: 0 20px;
@@ -24,31 +26,45 @@
             color: #ff6600;
         }
         .container {
-    max-width: 1000px; 
-    margin: 0 auto;  
-    padding: 0 40px;  
-}
-
-
+        max-width: 1000px; 
+        margin: 0 auto;  
+        padding: 0 40px;  
+        }
+ 
         body {
+            background-color: white;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             max-width: 1500px;
-            margin: 0;
+            margin: 0 auto;
             padding: 0 20px 50px 20px;
             color: #333;
-            width: 100%;
         }
 
         section {
             padding: 60px 0 20px 0;
             border-bottom: 1px solid #eee;
         }
-        h1 { color: #2c3e50; text-align: center; margin-top: 10px; }
-        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; }
         ul { list-style-type: square; }
         li { margin-bottom: 12px; }
         strong { color: #2c3e50; }
+        h1 { color: #2c3e50; text-align: center; margin-top: 10px; }
+        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; }
+
+    .correction
+   { font-weight: bold;
+    color:red; 
+  }
+  .bold {font-weight:bold;}
+  .case-content {
+    display: none;
+  }
+  .case-content.active {
+    display: block ;
+  }
+  .line {
+  border-bottom: 1px solid black;
+  margin: 20px 0;
     </style>
 </head>
 <body>
