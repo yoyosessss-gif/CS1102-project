@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>CS 1102 Group Project</title>
     <style>
-        /* 基本設定 */
+
         body {
             background-color: white;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,7 +14,7 @@
             color: #333;
         }
 
-        /* 導覽列容器 */
+
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -51,13 +51,13 @@
             padding: 0 40px;
         }
 
-        /* 區塊樣式：只給 section 底部加線 */
+
         section {
             padding: 40px 0;
             border-bottom: 1px solid #eee;
         }
 
-        /* 最後一個區塊（References）不要底線 */
+  
         section:last-of-type {
             border-bottom: none;
         }
@@ -110,42 +110,47 @@
         <h2>A Practical Guide to Building Legal LLM Tools</h2>
 
         <h3>Step 1: Data Preparation</h3>
-        <p>Before the AI can help you, you must provide it with high-quality information.</p>
         <ul>
-            <li><strong>Remove Sensitive Information:</strong> Before you upload documents, remove names or secret client details to protect from leaks.</li>
-            <li><strong>Build a Clean Library:</strong> Put best templates and court rules into one secure digital folder.</li>
-            <li><strong>Make Files Searchable:</strong> Use OCR software to turn scanned PDFs into searchable text.</li>
-        </ul>
+<p><strong>Remove Sensitive Information:</strong> Before you upload any documents, you must remove names, phone numbers, or secret client details. This protects the firm if there is a data leak.</p>
+<p> <strong>Build a Clean Library:</strong> Put the best templates, past opinions, and court rules of the firm into one secure digital folder. </p>
+<p> <strong>Make Files Searchable:</strong> Use OCR software to turn scanned PDFs into searchable text, AI cannot read a document if it is just image.</p>
+</ul>
 
         <h3>Step 2: Choose How to Build It</h3>
-        <p>There are two ways of coding for users to choose:</p>
-        <ul>
-            <li><strong>The No Code method:</strong> Use platforms like Microsoft Copilot Studio. Build agents by clicking buttons.</li>
-            <li><strong>The Low Code method:</strong> Use Python. Allows the AI to plan multi-step tasks like reading 50 contracts at once.</li>
-        </ul>
+        <p>There is two ways of coding for users to choose</p>
+<ul>
+<p><strong>The No Code method:</strong> Use platforms like Microsoft Copilot Studio. You can build AI agents by clicking buttons and typing instructions in English.</p>
+<p><strong>The Low Code method:</strong> Use frameworks like Python. This method is more complex but it allows the AI to plan and finish many steps at once, such as reading many contracts at once and writing a summary for each.</p>
+</ul>
 
         <h3>Step 3: Use Open Book Reasoning (RAG)</h3>
-        <p>Standard AI often makes up fake laws. Use Retrieval Augmented Generation to prevent this.</p>
-        <ul>
-            <li><strong>How RAG Works:</strong> AI must look for answers inside your documents first instead of guessing.</li>
-            <li><strong>Set Strict Rules:</strong> Restrict the AI to say it does not know if info is missing.</li>
-        </ul>
+        <p>AI often makes up fake information. To prevent this, you must use Retrieval Augmented Generation</p>
+<ul>
+<p><strong>How RAG Works:</strong> Instead of guessing from memory, the AI must look for the answer inside your uploaded documents first.</p>
+<p><strong>Set Strict Rules:</strong> Restrict the AI to say it does not know the answer if the information is not in its files. This prevents the AI from making things up.</p>
+</ul>
 
         <h3>Step 4: Master Legal Prompt Engineering</h3>
-        <p>The quality of the answer depends on your instructions. A professional prompt needs:</p>
-        <ol>
-            <li><strong>Role:</strong> e.g., "You are a senior IP lawyer with 20 years of experience."</li>
-            <li><strong>Task:</strong> e.g., "Review this document and list unfair clauses."</li>
-            <li><strong>Format:</strong> e.g., "Put results in a bulleted list."</li>
-            <li><strong>Citations:</strong> Ask for exact page numbers and paragraphs.</li>
-        </ol>
+        <h3>Step 4: Master Legal Prompt Engineering</h3>
+<p>he quality of the answer from the AI depends on your instructions and prompt. A professional prompt should include 4 things.</p>
+<ol>
+<li><strong>Role:</strong> Tell the AI to act as a senior lawyer or a specialist. </li>
+<p> EG. "You are a senior IP lawyer with 20 years of experience."</p>
+<li><strong>Task:</strong> Give a specific job, such as checking a contract for any missing rules about ending the agreement.</li>
+<p>EG. "Review this document and list any clauses that are unfair to our client."</p>
+<li><strong>Format:</strong> Tell the AI how to show and display the work. </li>
+<p> EG. "Put the results in a bulleted list with a summary paragraph at the end."</p>
+<li><strong>Citations:</strong> Ask the AI to list the exact page number and paragraph for every claim it makes.</li>
+<p> EG. "Tell me exactly which page and paragraph you found it on."</p>
+</ol>
+
 
         <h3>Step 5: Testing and Human Oversight</h3>
-        <p>AI is an assistant; the lawyer must double-check the info.</p>
-        <ul>
-            <li><strong>Human Verification:</strong> A qualified lawyer must review every output before it is finalized.</li>
-            <li><strong>The Accuracy Test:</strong> Create test questions where you know the answer to check the AI.</li>
-        </ul>
+        <p>AI should act as an assisting tool, however the lawyer should double check the info.</p>
+<ul>
+<p><strong>Human Verification:</strong> AI is only a helper for the office. A qualified lawyer must review output that the AI creates before it is finalized.</p>
+<p><strong>The Accuracy Test:</strong> Create test questions where you know the answer. If the AI fails to answer the question, you should fix your instructions or data.</p>
+</ul>
     </section>
 
     <section id="references">
