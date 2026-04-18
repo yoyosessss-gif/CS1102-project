@@ -5,7 +5,6 @@
         <title>CS 1102 Group Project</title>
 <style>
  
-  <style>
         nav {
             background-color: #333;
             padding: 15px;
@@ -20,7 +19,7 @@
         nav a {
             margin: 0 20px;
             text-decoration: none;
-            color: #333;
+            color: white;
             font-weight: bold;
         }
         nav a:hover {
@@ -46,6 +45,9 @@
             padding: 60px 0 20px 0;
             border-bottom: 1px solid #eee;
         }
+        ul { list-style-type: square; }
+        li { margin-bottom: 12px; }
+        strong { color: #2c3e50; }
         h1 { color: #2c3e50; text-align: center; margin-top: 10px; }
         h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; }
 
@@ -143,27 +145,34 @@
     </head>
 
     <body>
-        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
-            <a href="https://www.cityu.edu.hk/"><img src="Cityu_logo.jpeg" alt="CityU logo" width="80px"></a>
-            <h1 style="margin: 0; text-align: center;">CS1102 - Course Project - 2025 / 2026 Semester B</h1>
+        <div style="display: flex; align-items: center; gap: 30px; padding: 10px 20px; background-color: white;">
+            <a href="https://www.cityu.edu.hk/"><img src="Cityu_logo.jpeg" alt="CityU Logo" style="width: 100px; height: auto;"></a>
+            <nav style="flex: 1; margin: 0;">
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="experience.html">Experience</a>
+                <a href="discovery.html">Discovery</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="quiz.html">Quiz</a>
+            </nav>
         </div>
-        <h2>Project Topic: LLM for Legal Applications: Case Retrieval, Summarization, and Drafting Support</h2>
-        <h3>Sin Cheuk Yiu -58534786</h3>
-        <h3>Kwok Yan - 58541292</h3>
-        <h3>Seah Yan Zhu - 60031361</h3>
-        <div class="line"></div>
-        <nav>
-      <a href="index.html">Home</a>
-      <a href="background.html">Background</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="experience.html">Experience</a>
-      <a href="discovery.html">Discovery</a>
-      <a href="challenges.html">Challenges</a>
-      <a href="quiz.html">Quiz</a>
-        </nav>
-    <div class="line"></div>    
+    
+<div class="container">
+    <section id="discovery">
+        <h1>CS1102 - Course Project - 2025 / 2026 Semester B</h1>
+        <p style="text-align: center; font-size: 1.2em;"><strong>Topic: LLM for Legal Applications: Case Retrieval, Summarization, and Drafting Support</strong></p>
+        
+        <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <p><strong>Group Members:</strong></p>
+            <ul>
+                <li>Sin Cheuk Yiu - 58534786</li>
+                <li>Kwok Yan - 58541292</li>
+                <li>Seah Yan Zhu - 60031361</li>
+            </ul>
+            </div>
+    </section> 
 <br>
-<h1>Our discovery</h1>
+<h1 font-weight="bold">Our discovery</h1>
 <h2>LLM hallucination</h2>
 <p>We have designed some law-related questions to ask LLM to provide its full answer with citations. In this experiment, we use Copilot, a multi-LLM orchestration platform, to assess the accuracy of the citations in its responses. Examine whether the LLM provides accurate references or differs from the ordinances, legislation, and laws on the HKLII website.</p>
 
